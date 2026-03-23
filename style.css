@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1e1535, #0f0b1a);
+    color: #f5f1ff;
+}
+
+.topbar, .page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.topbar p { color: #c5b9e7; margin-top: 4px; }
+
+.gameContainer {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.boardPanel { padding: 10px; background: rgba(0, 0, 0, 0.2); border-radius: 14px; }
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+    position: relative;
+}
+
+.box {
+    border: 2px solid #b7a5e9;
+    font-size: 7vw;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.box:hover { background: rgba(183, 165, 233, 0.2); }
+
+.gameInfo { flex: 1; max-width: 380px; }
+.gameInfo h2 { font-size: 1.7rem; }
+.subtitle { margin-top: 8px; color: #c5b9e7; }
+
+.statusRow {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.info {
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    font-weight: 600;
+}
+
+#reset {
+    border: 0;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 9px 14px;
+    background: #d4b7ff;
+    color: #1a1030;
+    font-weight: 600;
+}
+
+.imgbox { margin-top: 18px; min-height: 40px; }
+.imgbox img { width: 0; max-width: 210px; border-radius: 10px; transition: width .4s ease; }
+
+.br-0 { border-right: 0; }
+.bl-0 { border-left: 0; }
+.bt-0 { border-top: 0; }
+.bb-0 { border-bottom: 0; }
+
+.line {
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background: #ff85e1;
+    border-radius: 999px;
+    transition: width .4s ease;
+}
+
+@media (max-width: 900px) {
+    .gameContainer { flex-wrap: wrap; }
+    .container {
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+    .box { font-size: 14vw; }
+}
+
+@media (max-width: 520px) {
+    .container {
+        grid-template-rows: repeat(3, 24vw);
+        grid-template-columns: repeat(3, 24vw);
+    }
+}
